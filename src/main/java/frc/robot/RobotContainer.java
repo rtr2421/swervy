@@ -54,8 +54,6 @@ public class RobotContainer {
         () -> -driverXbox.getRightX(),
         () -> -driverXbox.getRightY());
 
-    AbsoluteDrive dummyDrive = new AbsoluteDrive(drive, () -> 0.0, () -> 0.0, () -> 0.0, () -> 0.0);
-
     drive.setDefaultCommand(closedAbsoluteDrive);
   }
 
