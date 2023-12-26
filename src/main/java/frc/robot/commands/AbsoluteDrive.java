@@ -76,8 +76,7 @@ public class AbsoluteDrive extends CommandBase
                                                          headingVertical.getAsDouble());
 
     // Prevent Movement After Auto
-    if(initRotation)
-    {
+    if(initRotation) {
       if(headingHorizontal.getAsDouble() == 0 && headingVertical.getAsDouble() == 0)
       {
         // Get the curretHeading
@@ -99,7 +98,8 @@ public class AbsoluteDrive extends CommandBase
     SmartDashboard.putString("Translation", translation.toString());
 
     // Make the robot move
-    swerve.drive(translation, desiredSpeeds.omegaRadiansPerSecond, false);
+    swerve.drive(translation, desiredSpeeds.omegaRadiansPerSecond, true);
+    //  swerve.drive(desiredSpeeds);
 
   }
 
