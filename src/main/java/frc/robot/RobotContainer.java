@@ -8,6 +8,7 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.AbsoluteDrive;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.TeleopDrive;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
 
@@ -43,6 +44,7 @@ public class RobotContainer {
     drive.zeroGyro();
     // Configure the trigger bindings
     configureBindings();
+    /*
     AbsoluteDrive closedAbsoluteDrive = new AbsoluteDrive(drive,
         // Applies deadbands and inverts controls because joysticks
         // are back-right positive while robot
@@ -52,9 +54,16 @@ public class RobotContainer {
         () -> MathUtil.applyDeadband(driverXbox.getLeftX(),
             OperatorConstants.LEFT_X_DEADBAND),
         () -> -driverXbox.getRightX(),
-        () -> -driverXbox.getRightY());
+        () -> -driverXbox.getRightY()); */
+    TeleopDrive teleopDrive = new TeleopDrive(drive,
+        () -> MathUtil.applyDeadband(driverXbox.getLeftY(),
+            OperatorConstants.LEFT_Y_DEADBAND),
+        () -> MathUtil.applyDeadband(driverXbox.getLeftX(),
+            OperatorConstants.LEFT_X_DEADBAND),
+        () -> -driverXbox.getRightX(),
+        () -> false);
 
-    drive.setDefaultCommand(closedAbsoluteDrive);
+    drive.setDefaultCommand(teleopDrive);
   }
 
   /**
