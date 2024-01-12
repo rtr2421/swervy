@@ -1,6 +1,6 @@
 {
   "imu": {
-    "type": "adis16448",
+    "type": "analog",
     "id": 0,
     "canbus": null
   },

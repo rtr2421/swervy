@@ -30,7 +30,7 @@ public class SwerveSubsystem extends SubsystemBase {
   private static final double DRIVE_GEAR_RATIO = 6.75; // SDS MK4i L2
   private static final double DRIVE_WHEEL_DIAMETER_METERS = Units.inchesToMeters(4); // maybe need to be more precise
   private static final double ANGLE_GEAR_RATIO = 150.0 / 7.0; // From product page
-  private static final int ANGLE_PULSES_PER_TURN = 4096; // CANEncoder
+  private static final int ANGLE_PULSES_PER_TURN = 1; // CANEncoder
   /**
    * Swerve drive object.
    */
