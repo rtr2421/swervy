@@ -1,6 +1,10 @@
 {
   "imu": {
+<<<<<<< Updated upstream
     "type": "analog",
+=======
+    "type": "adis16470",
+>>>>>>> Stashed changes
     "id": 0,
     "canbus": null
   },
